@@ -1,0 +1,25 @@
+/* Variables CSS pour faciliter les ajustements futurs */
+:root {
+  --primary-bg-color: #0e3742;
+  --secondary-bg-color: #0c0c1d;
+  --button-bg-color: #c1c556;
+  --button-hover-bg-color: #ff0000;
+  --error-color: #ff4d4d;
+  --text-color: #ffffff;
+  --border-color: #c1c556;
+}
+
+/* Réinitialisation des marges et des bordures pour le body */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--primary-bg-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
