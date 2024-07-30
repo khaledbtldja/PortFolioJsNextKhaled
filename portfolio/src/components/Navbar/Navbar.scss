@@ -1,0 +1,151 @@
+/* Styles de la navbar */
+.navbar {
+  height: 100px;
+  background: linear-gradient(180deg, #0e3742, #0c0c1d);
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  position: fixed; /* Fixé en haut */
+  width: 100%;
+  top: 0;
+}
+
+.navbar .wrapper {
+  max-width: 1366px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 20px; /* Espacement intérieur */
+}
+
+.navbar .wrapper span {
+  font-weight: bold;
+  font-size: 6em; /* Taille par défaut pour les grands écrans */
+  letter-spacing: 20px;
+  color: #0e3742;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center; /* Centrer le texte */
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  line-height: 0.70em;
+  outline: none;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4,
+                 0 0 20px #03bcf4,
+                 0 0 40px #03bcf4,
+                 0 0 80px #03bcf4,
+                 0 0 160px #03bcf4;
+  }
+}
+
+.navbar .wrapper .social {
+  display: flex;
+  gap: 20px; /* Espacement par défaut pour les grands écrans */
+}
+
+.navbar .wrapper .social img {
+  width: 50px; /* Taille par défaut pour les grands écrans */
+  height: 50px;
+}
+
+/* Styles pour le bouton de la sidebar */
+.sidebar-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: auto; /* Hauteur automatique pour les petits écrans */
+    padding: 10px 0; /* Espacement interne */
+  }
+
+  .navbar .wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar .wrapper span {
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+    margin-bottom: 10px; /* Espacement en bas */
+  }
+
+  .navbar .wrapper .social {
+    gap: 10px;
+  }
+
+  .navbar .wrapper .social img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Positionnement du bouton de la sidebar pour les petits écrans */
+  .sidebar-button {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar .wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar .wrapper span {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .navbar .wrapper .social {
+    gap: 15px;
+  }
+
+  .navbar .wrapper .social img {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+@media (min-width: 1025px) {
+  .navbar {
+    height: 100px; /* Hauteur fixe pour les grands écrans */
+  }
+
+  .navbar .wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar .wrapper span {
+    font-size: 6em; /* Taille par défaut pour les grands écrans */
+    letter-spacing: 20px;
+  }
+
+  .navbar .wrapper .social {
+    gap: 20px;
+  }
+
+  .navbar .wrapper .social img {
+    width: 50px;
+    height: 50px;
+  }
+}

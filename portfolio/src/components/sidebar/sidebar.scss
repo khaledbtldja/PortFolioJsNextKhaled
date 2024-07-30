@@ -1,0 +1,70 @@
+:root {
+    --primary-bg-color: #0e3742;
+    --secondary-bg-color: #0c0c1d;
+    --button-bg-color: #c1c556;
+    --button-hover-bg-color: #ff0000;
+    --error-color: #ff4d4d;
+    --text-color: #ffffff;
+    --border-color: #c1c556;
+  }
+  
+  /* Styles pour la barre latérale */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+  
+    .bg {
+      z-index: 999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 400px;
+      background: linear-gradient(180deg, var(--primary-bg-color), var(--secondary-bg-color));
+  
+      .links {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+  
+        a {
+          font-size: 30px;
+          font-weight: bold;
+          color: var(--text-color);
+          text-decoration: none; // Supprimer les lignes sous les mots
+          transition: color 0.3s, transform 0.3s;
+  
+          &:hover {
+            color: var(--button-bg-color); // Change la couleur du texte au survol
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  
+    button {
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      position: fixed;
+      top: 30px;
+      left: 75px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+  
+      svg {
+        stroke: var(--text-color);
+      }
+    }
+  }
+  

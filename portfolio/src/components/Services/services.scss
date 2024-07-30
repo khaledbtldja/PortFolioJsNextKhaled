@@ -1,0 +1,264 @@
+:root {
+    --primary-bg-color: #0e3742;
+    --secondary-bg-color: #0c0c1d;
+    --button-bg-color: #c1c556;
+    --button-hover-bg-color: #ff0000;
+    --error-color: #ff4d4d;
+    --text-color: #ffffff;
+    --border-color: #c1c556;
+}
+
+/* Réinitialisation des marges et des bordures pour le body */
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, var(--secondary-bg-color), var(--primary-bg-color));
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styles pour la section des services */
+.services {
+    background: linear-gradient(180deg, var(--secondary-bg-color), var(--primary-bg-color));
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(140vh - 100px);
+
+    .textContiner {
+        flex: 1;
+        align-self: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        p {
+            font-weight: 200;
+            font-size: 20px;
+            color: var(--text-color);
+            text-align: right;
+        }
+
+        hr {
+            width: 500px;
+            border: none;
+            border-top: 0.5px solid var(--border-color);
+        }
+    }
+
+    .titleContiner {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+
+            img {
+                width: 300px;
+                height: 100px;
+                border-radius: 50px;
+                object-fit: cover;
+            }
+
+            h1 {
+                font-size: 96px;
+                font-weight: 100;
+                color: var(--button-bg-color);
+            }
+
+            button {
+                width: 300px;
+                height: 100px;
+                border-radius: 50px;
+                background-color: var(--button-bg-color);
+                border: none;
+                color: var(--secondary-bg-color);
+                font-size: 24px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: var(--button-hover-bg-color);
+                    color: var(--text-color);
+                }
+            }
+        }
+    }
+
+    .listeContiner {
+        flex: 2;
+        max-width: 1400px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+        gap: 40px; /* Ajout d'une marge de 30px entre les box */
+
+        .box {
+            flex: 1 1 calc(33.333% - 30px); /* Pour 3 colonnes avec espace */
+            padding: 10px;
+            border: 0.5px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box; /* Inclut padding et border dans la largeur totale */
+            margin-bottom: 40px;
+            background: linear-gradient(180deg, var(--primary-bg-color), var(--secondary-bg-color));
+            border-radius: 40px;
+            box-shadow: 0 2px 160px rgba(165, 188, 97, 0.768);
+
+            img {
+                width: 170px;
+                height: 180px;
+                object-fit: cover;
+                margin-bottom: 10px; /* Espace sous l'image */
+                align-self: center; /* Centre l'image horizontalement */
+            }
+
+            h2 {
+                display: flex;
+                justify-content: center; /* Centre le texte */
+                text-align: center; /* Centre le texte */
+                font-size: 20px; /* Ajuste la taille si nécessaire */
+                color: var(--button-bg-color);
+            }
+        }
+    }
+}
+
+/* Styles responsive pour les écrans plus petits (téléphones) */
+@media (max-width: 768px) {
+    .services {
+        height: auto; /* Ajuste la hauteur automatiquement pour s'adapter au contenu */
+        padding: 20px; /* Ajoute du padding pour espacer le contenu */
+
+        .textContiner {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            p {
+                font-size: 18px;
+                text-align: left;
+            }
+
+            hr {
+                width: 100%;
+            }
+        }
+
+        .titleContiner {
+            .title {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                h1 {
+                    font-size: 48px;
+                }
+
+                button {
+                    width: 100%;
+                    height: auto;
+                    font-size: 20px;
+                    padding: 10px;
+                }
+            }
+        }
+
+        .listeContiner {
+            gap: 20px;
+
+            .box {
+                flex: 1 1 100%; /* Pour afficher les box en une seule colonne */
+                padding: 20px;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                h2 {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+/* Styles responsive pour les tablettes (iPads) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services {
+        height: auto; /* Ajuste la hauteur automatiquement pour s'adapter au contenu */
+        padding: 30px; /* Ajoute du padding pour espacer le contenu */
+
+        .textContiner {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+
+            p {
+                font-size: 18px;
+                text-align: left;
+            }
+
+            hr {
+                width: 100%;
+            }
+        }
+
+        .titleContiner {
+            .title {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 30px;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                h1 {
+                    font-size: 64px;
+                }
+
+                button {
+                    width: 100%;
+                    height: auto;
+                    font-size: 22px;
+                    padding: 15px;
+                }
+            }
+        }
+
+        .listeContiner {
+            gap: 30px;
+
+            .box {
+                flex: 1 1 calc(50% - 20px); /* Pour afficher les box en deux colonnes */
+                padding: 20px;
+
+                img {
+                    width: 130px;
+                    height: 130px;
+                }
+
+                h2 {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
