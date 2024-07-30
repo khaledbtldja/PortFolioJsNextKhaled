@@ -1,0 +1,142 @@
+:root {
+    --primary-bg-color: #0e3742;
+    --secondary-bg-color: #0c0c1d;
+    --button-bg-color: #c1c556;
+    --button-hover-bg-color: #ff0000;
+    --error-color: #ff4d4d;
+    --text-color: #ffffff;
+    --border-color: #c1c556;
+}
+
+/* Styles globaux pour le corps et les éléments principaux */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Assurez-vous qu'il n'y a pas de défilement inutile */
+}
+
+/* Styles globaux pour le conteneur de connexion */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(180deg, var(--secondary-bg-color), var(--primary-bg-color));
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styles pour le formulaire de connexion */
+.login-form {
+    background: linear-gradient(180deg, var(--primary-bg-color), var(--secondary-bg-color));
+    border-radius: 40px;
+    box-shadow: 0 2px 160px rgba(165, 188, 97, 0.768);
+    padding: 100px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box; /* Inclut le padding et les bordures dans la largeur totale */
+}
+
+/* Styles pour le titre du formulaire */
+.login-form h1 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 80px;
+    text-shadow: 0 2px 20px rgba(165, 188, 97, 0.768);
+    box-shadow: 5px 10px 20px rgba(165, 188, 97, 0.768);
+}
+
+/* Styles pour les éléments du formulaire */
+.login-form div {
+    margin-bottom: 15px;
+}
+
+/* Styles pour les labels */
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 30px;
+    text-shadow: 0 2px 20px rgba(165, 188, 97, 0.768);
+}
+
+/* Styles pour les champs de saisie */
+.login-form input {
+    background: linear-gradient(180deg, var(--primary-bg-color), var(--secondary-bg-color));
+    width: 100%;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box; /* Inclut le padding et les bordures dans la largeur totale */
+    font-size: 30px;
+    color: var(--text-color);
+    box-shadow: 5px 10px 20px rgba(165, 188, 97, 0.768);
+}
+
+/* Styles pour les champs de saisie au focus */
+.login-form input:focus {
+    border-color: var(--button-hover-bg-color);
+    outline: none;
+    box-shadow: 5px 10px 20px rgba(255, 0, 0, 0.5);
+}
+
+/* Styles pour les boutons */
+.login-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--button-bg-color);
+    color: var(--secondary-bg-color);
+    border: none;
+    border-radius: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+    box-shadow: 5px 10px 50px rgba(165, 188, 97, 0.768);
+}
+
+/* Styles pour les boutons au survol */
+.login-form button:hover {
+    background-color: var(--button-hover-bg-color);
+    box-shadow: 0 10px 50px rgba(255, 0, 0, 0.5); 
+}
+
+/* Styles pour les messages d'erreur */
+.error {
+    color: var(--error-color);
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Styles responsive pour les écrans plus petits */
+@media (max-width: 768px) {
+    .login-form {
+        padding: 50px;
+        max-width: 90%;
+    }
+
+    .login-form h1 {
+        font-size: 50px;
+    }
+
+    .login-form label {
+        font-size: 20px;
+    }
+
+    .login-form input {
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .login-form button {
+        padding: 20px;
+        font-size: 20px;
+    }
+}
