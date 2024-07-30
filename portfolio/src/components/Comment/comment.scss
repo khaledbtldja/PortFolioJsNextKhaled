@@ -1,0 +1,324 @@
+:root {
+  --primary-bg-color: #0e3742;
+  --secondary-bg-color: #0c0c1d;
+  --button-bg-color: #c1c556;
+  --button-hover-bg-color: #ff0000;
+  --error-color: #ff4d4d;
+  --text-color: #ffffff;
+  --border-color: #c1c556;
+}
+
+/* Réinitialisation des marges et des bordures pour le body */
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Styles globaux pour le conteneur principal */
+.container {
+  min-height: 80vh; /* Assure que le conteneur occupe au moins toute la hauteur de la vue */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  background: linear-gradient(180deg, var(--secondary-bg-color), var(--primary-bg-color));
+  color: var(--text-color);
+  height: 130vh;
+  padding-top: 100px;
+}
+
+/* Styles pour l'en-tête du wrapper */
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  color: var(--button-bg-color);
+  font-size: 37px;
+}
+
+.header p {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+/* Styles pour le contenu */
+.content {
+  width: 100%;
+  max-width: 1200px; /* Limite la largeur maximale du contenu */
+  margin: 0 auto; /* Centre le contenu horizontalement */
+
+  .comment-list {
+    margin-bottom: 20px;
+  }
+
+  .commentaire {
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: linear-gradient(180deg, var(--primary-bg-color), var(--secondary-bg-color));
+
+    h2 {
+      margin: 0;
+      font-size: 34px;
+      color: var(--button-bg-color);
+    }
+
+    p {
+      margin: 0 40px;
+      color: var(--text-color);
+      font-size: 24px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+
+      button {
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: var(--button-bg-color);
+        color: var(--secondary-bg-color);
+        margin: 0 5px;
+        font-size: 20px;
+
+        &:hover {
+          background-color: var(--button-hover-bg-color);
+          color: var(--text-color);
+        }
+      }
+    }
+  }
+
+  .empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-color);
+    font-size: 24px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: var(--button-bg-color);
+      color: var(--secondary-bg-color);
+      margin: 0 5px;
+      font-size: 24px;
+
+      &:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+      }
+
+      &:hover:not(:disabled) {
+        background-color: var(--button-hover-bg-color);
+      }
+    }
+
+    span {
+      align-self: center;
+      margin: 0 10px;
+      font-size: 18px;
+    }
+  }
+
+  .nouveau-commentaire {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input,
+    textarea {
+      padding: 20px;
+      border: 1px solid var(--border-color);
+      background: linear-gradient(180deg, var(--primary-bg-color), var(--secondary-bg-color));
+      border-radius: 20px;
+      color: var(--text-color);
+      font-size: 20px;
+    }
+
+    button {
+      padding: 20px;
+      background-color: var(--button-bg-color);
+      border: none;
+      border-radius: 20px;
+      color: var(--secondary-bg-color);
+      cursor: pointer;
+      font-size: 20px;
+      width: 100%; /* Assure que le bouton a la même largeur que les champs de saisie */
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: var(--button-hover-bg-color);
+      }
+    }
+  }
+
+  .editable-textarea {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: linear-gradient(180deg, var(--primary-bg-color), var(--secondary-bg-color));
+    color: var(--text-color);
+    resize: none;
+  }
+}
+
+/* Styles pour le bouton de déconnexion */
+.logout-button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #c62828;
+  }
+}
+
+/* Réactivité pour les petits écrans (téléphones mobiles) */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .header p {
+    font-size: 16px;
+  }
+
+  .commentaire h2 {
+    font-size: 24px;
+  }
+
+  .commentaire p {
+    font-size: 18px;
+    margin: 0 10px; /* Reduce margin to fit text better on small screens */
+  }
+
+  .buttons button {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  .pagination button {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  .nouveau-commentaire input,
+  .nouveau-commentaire textarea {
+    font-size: 16px;
+    padding: 10px; /* Reduce padding to fit better on small screens */
+  }
+
+  .nouveau-commentaire button {
+    font-size: 16px;
+    padding: 10px; /* Reduce padding to fit better on small screens */
+  }
+
+  .editable-textarea {
+    font-size: 16px;
+    padding: 10px; /* Reduce padding to fit better on small screens */
+  }
+}
+
+/* Réactivité pour les tablettes (iPads) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .header p {
+    font-size: 17px;
+  }
+
+  .commentaire h2 {
+    font-size: 30px;
+  }
+
+  .commentaire p {
+    font-size: 22px;
+  }
+
+  .buttons button {
+    font-size: 19px;
+  }
+
+  .pagination button {
+    font-size: 22px;
+  }
+
+  .nouveau-commentaire input,
+  .nouveau-commentaire textarea {
+    font-size: 19px;
+  }
+
+  .nouveau-commentaire button {
+    font-size: 19px;
+  }
+
+  .editable-textarea {
+    font-size: 19px;
+  }
+}
+
+/* Réactivité pour les grands écrans (ordinateurs de bureau) */
+@media (min-width: 1025px) {
+  .header h1 {
+    font-size: 37px;
+  }
+
+  .header p {
+    font-size: 18px;
+  }
+
+  .commentaire h2 {
+    font-size: 34px;
+  }
+
+  .commentaire p {
+    font-size: 24px;
+  }
+
+  .buttons button {
+    font-size: 20px;
+  }
+
+  .pagination button {
+    font-size: 24px;
+  }
+
+  .nouveau-commentaire input,
+  .nouveau-commentaire textarea {
+    font-size: 20px;
+  }
+
+  .nouveau-commentaire button {
+    font-size: 20px;
+  }
+
+  .editable-textarea {
+    font-size: 20px;
+  }
+}
